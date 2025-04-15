@@ -262,7 +262,8 @@ function findPlaylist(compare)
 
 function addPlaylist()
 {
-  const title = `wl__${(new Date().getMonth()) + 1}`;
+  //const title = `wl__${(new Date().getMonth()) + 1}`;
+  const title = `wl__${(new Date().getMonth()) + 20}`;
 
   const item = findPlaylist(({ snippet }) => snippet.title === title);
 
