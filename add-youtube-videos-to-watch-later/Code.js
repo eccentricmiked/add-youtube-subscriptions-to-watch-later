@@ -239,8 +239,8 @@ function getVideoDuration(videoId)
 
       if (list.pageInfo.totalResults > 1)
       {
-        console.warn("More than one video info found for id" + videoId + ". Size: " + list.pageInfo.totalResults);
-        console.log("Returning the first video info found for id" + videoId + ". Size: " + list.items[0].contentDetails.duration);
+        console.warn("More than one video info found for id " + videoId + ". Size: " + list.pageInfo.totalResults);
+        console.log("Returning the first video info found for id " + videoId + ". Size: " + list.items[0].contentDetails.duration);
         return list.items[0].contentDetails.duration;
       }
       else
