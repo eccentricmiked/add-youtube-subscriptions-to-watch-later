@@ -239,15 +239,17 @@ function getVideoDuration(videoId)
 
       if (list.pageInfo.totalResults > 1)
       {
-        console.log("More than one video info found for id" + videoId + ". Size: " + list.pageInfo.totalResults);
-        return null;
+        console.warn("More than one video info found for id" + videoId + ". Size: " + list.pageInfo.totalResults);
+        console.log("Returning the first video info found for id" + videoId + ". Size: " + list.items[0].contentDetails.duration);
+        return list.items[0].contentDetails.duration;
       }
       else
       {
         if (list.pageInfo.totalResults == 0)
         {
-          console.log("No video info found for id" + videoId + ". Size: " + list.pageInfo.totalResults);
-          return null;
+          console.warn("No video info found for id: " + videoId + ". Size: " + list.pageInfo.totalResults);
+          console.log("Inputting PT0S (zero seconds) for id: " + videoId + ".");
+          return "PT0S";
         }
 
         return list.items[0].contentDetails.duration;
